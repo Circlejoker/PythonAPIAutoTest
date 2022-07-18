@@ -1,0 +1,847 @@
+2022-07-18 17:07:49,687 - INFO - 35 - test_register - ============= 注册接口 ===============
+2022-07-18 17:07:49,697 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['phone', 'phone', 'phone']
+2022-07-18 17:07:51,090 - INFO - 39 - replace_case_with_re - 有#phone#标识符，需要生成新的手机号码13198349602
+2022-07-18 17:07:51,090 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '001', '用例名称': '普通用户注册成功', '所属模块': '注册', 'method': 'post', 'url': 'member/register', 'headers': '{"X-Lemonban-Media-Type":"lemonban.v2"}', 'req_data': '{"mobile_phone":"13198349602","pwd":"123456789","reg_name": "py小陈"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..mobile_phone","expected":"13198349602","type":"eq"}]', 'assert_db': '[{"sql":"select * from member where mobile_phone=13198349602","expected":1,"db_type":"count"}]', '备注': None, '用例编写人': None, '用例负责人': None}
+2022-07-18 17:07:51,126 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/register
+2022-07-18 17:07:51,126 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:07:51,126 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '13198349602', 'pwd': '123456789', 'reg_name': 'py小陈'}
+2022-07-18 17:07:51,230 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 15587, 'reg_name': 'py小陈', 'mobile_phone': '13198349602'}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,230 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:07:51,231 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:07:51,231 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:07:51,231 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:07:51,231 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,231 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,231 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:07:51,231 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:07:51,231 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:07:51,231 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:07:51,231 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,231 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,231 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..mobile_phone', 'expected': '13198349602', 'type': 'eq'}
+2022-07-18 17:07:51,232 - INFO - 35 - assert_response_value - 此时actual的值为：
+['13198349602']
+2022-07-18 17:07:51,232 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+13198349602
+2022-07-18 17:07:51,232 - INFO - 41 - assert_response_value - 期望结果为：
+13198349602
+2022-07-18 17:07:51,232 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,232 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,232 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:07:51,276 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select * from member where mobile_phone=13198349602
+2022-07-18 17:07:51,276 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+count
+2022-07-18 17:07:51,276 - INFO - 91 - assert_db - 期望结果为：1
+2022-07-18 17:07:51,276 - INFO - 93 - assert_db - 比对数据库查询的结果条数,是否符合预期
+2022-07-18 17:07:51,289 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:07:51,290 - INFO - 118 - assert_db - 断言成功！
+2022-07-18 17:07:51,294 - INFO - 39 - test_login - ============= 登录接口 ===============
+2022-07-18 17:07:51,294 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/login
+2022-07-18 17:07:51,294 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:07:51,294 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '15500000000', 'pwd': '12345678'}
+2022-07-18 17:07:51,336 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3071002.51, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:12:52', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,336 - INFO - 45 - test_login - 接口响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3071002.51, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:12:52', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,337 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:07:51,337 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:07:51,337 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:07:51,337 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:07:51,337 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,338 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,338 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:07:51,338 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:07:51,338 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:07:51,338 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:07:51,338 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,338 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,338 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..mobile_phone', 'expected': '15500000000', 'type': 'eq'}
+2022-07-18 17:07:51,339 - INFO - 35 - assert_response_value - 此时actual的值为：
+['15500000000']
+2022-07-18 17:07:51,339 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+15500000000
+2022-07-18 17:07:51,339 - INFO - 41 - assert_response_value - 期望结果为：
+15500000000
+2022-07-18 17:07:51,339 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,339 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,339 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$...token', 'expected': 1, 'type': 'count'}
+2022-07-18 17:07:51,339 - INFO - 35 - assert_response_value - 此时actual的值为：
+['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg']
+2022-07-18 17:07:51,339 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg
+2022-07-18 17:07:51,340 - INFO - 41 - assert_response_value - 期望结果为：
+1
+2022-07-18 17:07:51,340 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:07:51,342 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['user', 'passwd']
+2022-07-18 17:07:51,342 - INFO - 54 - replace_case_with_re - 将标识符user 替换为15500000000
+2022-07-18 17:07:51,342 - INFO - 54 - replace_case_with_re - 将标识符passwd 替换为12345678
+2022-07-18 17:07:51,342 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '001', '用例名称': '用户登录成功', '所属模块': '登录', 'method': 'post', 'url': 'member/login', 'req_data': '{"mobile_phone":"15500000000","pwd":"12345678"}', 'extract': '{"token":"$..token","member_id":"$..id","leave_amount":"$..leave_amount"}', 'assert_list': None, 'assert_db': None}
+2022-07-18 17:07:51,342 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/login
+2022-07-18 17:07:51,342 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:07:51,342 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '15500000000', 'pwd': '12345678'}
+2022-07-18 17:07:51,365 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3071002.51, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:12:52', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,368 - INFO - 67 - test_recharge - {'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3071002.51, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:12:52', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,369 - INFO - 37 - extract_data_from_response - 提取的变量名为:token,提取的jsonpath表达式为:$..token
+2022-07-18 17:07:51,369 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg']
+2022-07-18 17:07:51,369 - INFO - 44 - extract_data_from_response - 提取的变量名为:token,提取的值为:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,370 - INFO - 37 - extract_data_from_response - 提取的变量名为:member_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:07:51,370 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[27]
+2022-07-18 17:07:51,370 - INFO - 44 - extract_data_from_response - 提取的变量名为:member_id,提取的值为:27，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,371 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:07:51,372 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3071002.51]
+2022-07-18 17:07:51,372 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3071002.51，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,372 - INFO - 37 - extract_data_from_response - 提取的变量名为:token,提取的jsonpath表达式为:$..token
+2022-07-18 17:07:51,372 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg']
+2022-07-18 17:07:51,373 - INFO - 44 - extract_data_from_response - 提取的变量名为:token,提取的值为:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzJ9.wWUiEs054cb95HKNxi16TjHqVp3lEUSOIzbwF2sWMxriy7_NMWeEp5QHi6-QL-z_Vw1VujJEiiVe4DqDHpqWQg，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,373 - INFO - 37 - extract_data_from_response - 提取的变量名为:member_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:07:51,374 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[27]
+2022-07-18 17:07:51,375 - INFO - 44 - extract_data_from_response - 提取的变量名为:member_id,提取的值为:27，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,375 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:07:51,378 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3071002.51]
+2022-07-18 17:07:51,378 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3071002.51，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,381 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['member_id', 'leave_amount', 'member_id', 'leave_amount']
+2022-07-18 17:07:51,381 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:07:51,382 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3071002.51
+2022-07-18 17:07:51,382 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:07:51,382 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3071002.51
+2022-07-18 17:07:51,382 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '002', '用例名称': '普通用户充值200元成功', '所属模块': '充值', 'method': 'post', 'url': 'member/recharge', 'req_data': '{"member_id":"27","amount":"200"}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..leave_amount","expected":3071002.51+200,"type":"eq"}]', 'assert_db': '[{"sql":"select leave_amount from member where id=27","expected":{"leave_amount":3071002.51+200},"db_type":"eq"}]'}
+2022-07-18 17:07:51,384 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/recharge
+2022-07-18 17:07:51,384 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:07:51,384 - INFO - 36 - send_requests - 请求数据：
+{'member_id': '27', 'amount': '200'}
+2022-07-18 17:07:51,429 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3071202.51, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,429 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:07:51,429 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3071202.51]
+2022-07-18 17:07:51,429 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3071202.51，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,429 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:07:51,429 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:07:51,430 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:07:51,430 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:07:51,430 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,430 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,430 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:07:51,430 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:07:51,430 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:07:51,430 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:07:51,430 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,430 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,430 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..leave_amount', 'expected': 3071202.51, 'type': 'eq'}
+2022-07-18 17:07:51,430 - INFO - 35 - assert_response_value - 此时actual的值为：
+[3071202.51]
+2022-07-18 17:07:51,430 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+3071202.51
+2022-07-18 17:07:51,431 - INFO - 41 - assert_response_value - 期望结果为：
+3071202.51
+2022-07-18 17:07:51,431 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,431 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,431 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:07:51,431 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:07:51,431 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3071202.51]
+2022-07-18 17:07:51,431 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3071202.51，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,455 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select leave_amount from member where id=27
+2022-07-18 17:07:51,455 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+eq
+2022-07-18 17:07:51,455 - INFO - 91 - assert_db - 期望结果为：{'leave_amount': 3071202.51}
+2022-07-18 17:07:51,455 - INFO - 97 - assert_db - 比对数据库查询语句是否相等
+2022-07-18 17:07:51,462 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:07:51,462 - INFO - 118 - assert_db - 断言成功！
+2022-07-18 17:07:51,465 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['member_id', 'leave_amount', 'member_id', 'leave_amount']
+2022-07-18 17:07:51,465 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:07:51,465 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3071202.51
+2022-07-18 17:07:51,465 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:07:51,465 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3071202.51
+2022-07-18 17:07:51,465 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '003', '用例名称': '普通用户充值300.1元成功', '所属模块': '充值', 'method': 'post', 'url': 'member/recharge', 'req_data': '{"member_id":"27","amount":"300.1"}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..leave_amount","expected":3071202.51+300.1,"type":"eq"}]', 'assert_db': '[{"sql":"select leave_amount from member where id=27","expected":{"leave_amount":3071202.51+300.1},"db_type":"eq"}]'}
+2022-07-18 17:07:51,466 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/recharge
+2022-07-18 17:07:51,466 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:07:51,466 - INFO - 36 - send_requests - 请求数据：
+{'member_id': '27', 'amount': '300.1'}
+2022-07-18 17:07:51,494 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3071502.61, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,494 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:07:51,494 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3071502.61]
+2022-07-18 17:07:51,494 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3071502.61，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,494 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:07:51,495 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:07:51,495 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:07:51,495 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:07:51,495 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,495 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,495 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:07:51,495 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:07:51,495 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:07:51,495 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:07:51,495 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,495 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,495 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..leave_amount', 'expected': 3071502.61, 'type': 'eq'}
+2022-07-18 17:07:51,495 - INFO - 35 - assert_response_value - 此时actual的值为：
+[3071502.61]
+2022-07-18 17:07:51,496 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+3071502.61
+2022-07-18 17:07:51,496 - INFO - 41 - assert_response_value - 期望结果为：
+3071502.61
+2022-07-18 17:07:51,496 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,496 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,496 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:07:51,496 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:07:51,496 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3071502.61]
+2022-07-18 17:07:51,496 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3071502.61，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,525 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select leave_amount from member where id=27
+2022-07-18 17:07:51,525 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+eq
+2022-07-18 17:07:51,525 - INFO - 91 - assert_db - 期望结果为：{'leave_amount': 3071502.61}
+2022-07-18 17:07:51,525 - INFO - 97 - assert_db - 比对数据库查询语句是否相等
+2022-07-18 17:07:51,534 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:07:51,535 - INFO - 118 - assert_db - 断言成功！
+2022-07-18 17:07:51,538 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['member_id', 'leave_amount', 'member_id', 'leave_amount']
+2022-07-18 17:07:51,539 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:07:51,539 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3071502.61
+2022-07-18 17:07:51,540 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:07:51,540 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3071502.61
+2022-07-18 17:07:51,540 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '004', '用例名称': '普通用户充值500.01元成功', '所属模块': '充值', 'method': 'post', 'url': 'member/recharge', 'req_data': '{"member_id":"27","amount":"500.01"}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..leave_amount","expected":3071502.61+500.01,"type":"eq"}]', 'assert_db': '[{"sql":"select leave_amount from member where id=27","expected":{"leave_amount":3071502.61+500.01},"db_type":"eq"}]'}
+2022-07-18 17:07:51,541 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/recharge
+2022-07-18 17:07:51,541 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:07:51,542 - INFO - 36 - send_requests - 请求数据：
+{'member_id': '27', 'amount': '500.01'}
+2022-07-18 17:07:51,575 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3072002.62, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,576 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:07:51,577 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3072002.62]
+2022-07-18 17:07:51,577 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3072002.62，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,578 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:07:51,578 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:07:51,579 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:07:51,579 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:07:51,579 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,579 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,580 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:07:51,581 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:07:51,582 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:07:51,583 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:07:51,584 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,585 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,585 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..leave_amount', 'expected': 3072002.6199999996, 'type': 'eq'}
+2022-07-18 17:07:51,585 - INFO - 35 - assert_response_value - 此时actual的值为：
+[3072002.62]
+2022-07-18 17:07:51,586 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+3072002.62
+2022-07-18 17:07:51,586 - INFO - 41 - assert_response_value - 期望结果为：
+3072002.6199999996
+2022-07-18 17:07:51,586 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,586 - INFO - 46 - assert_response_value - 比对结果为：
+False
+2022-07-18 17:07:51,586 - INFO - 59 - assert_response_value - 部分断言失败,请查看断言结果为False的值
+2022-07-18 17:07:51,619 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select leave_amount from member where id=27
+2022-07-18 17:07:51,619 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+eq
+2022-07-18 17:07:51,619 - INFO - 91 - assert_db - 期望结果为：{'leave_amount': 3072002.6199999996}
+2022-07-18 17:07:51,619 - INFO - 97 - assert_db - 比对数据库查询语句是否相等
+2022-07-18 17:07:51,626 - INFO - 110 - assert_db - 比对结果为：False
+2022-07-18 17:07:51,627 - INFO - 115 - assert_db - 部分断言失败，请查看数据库比对结果为False的
+2022-07-18 17:07:51,745 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['user', 'passwd']
+2022-07-18 17:07:51,745 - INFO - 54 - replace_case_with_re - 将标识符user 替换为15500000000
+2022-07-18 17:07:51,745 - INFO - 54 - replace_case_with_re - 将标识符passwd 替换为12345678
+2022-07-18 17:07:51,745 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '001', '用例名称': '用户登录成功', '所属模块': '登录', 'method': 'post', 'url': 'member/login', 'req_data': '{"mobile_phone":"15500000000","pwd":"12345678"}', 'extract': '{"token":"$..token","member_id":"$..id"}', 'assert_list': None, 'assert_db': None}
+2022-07-18 17:07:51,745 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/login
+2022-07-18 17:07:51,746 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:07:51,746 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '15500000000', 'pwd': '12345678'}
+2022-07-18 17:07:51,779 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3072002.62, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:12:53', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzN9.361l7ULlz6IjzbTllvIySLPGwfEEZjMosJ6fQb9a5nOhzhtQPi4BJKnJRHURfau_FCTV6acPkKxPt0kIMo0bdw'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,780 - INFO - 37 - extract_data_from_response - 提取的变量名为:token,提取的jsonpath表达式为:$..token
+2022-07-18 17:07:51,780 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzN9.361l7ULlz6IjzbTllvIySLPGwfEEZjMosJ6fQb9a5nOhzhtQPi4BJKnJRHURfau_FCTV6acPkKxPt0kIMo0bdw']
+2022-07-18 17:07:51,780 - INFO - 44 - extract_data_from_response - 提取的变量名为:token,提取的值为:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzN9.361l7ULlz6IjzbTllvIySLPGwfEEZjMosJ6fQb9a5nOhzhtQPi4BJKnJRHURfau_FCTV6acPkKxPt0kIMo0bdw，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,781 - INFO - 37 - extract_data_from_response - 提取的变量名为:member_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:07:51,781 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[27]
+2022-07-18 17:07:51,781 - INFO - 44 - extract_data_from_response - 提取的变量名为:member_id,提取的值为:27，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,781 - INFO - 37 - extract_data_from_response - 提取的变量名为:token,提取的jsonpath表达式为:$..token
+2022-07-18 17:07:51,782 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzN9.361l7ULlz6IjzbTllvIySLPGwfEEZjMosJ6fQb9a5nOhzhtQPi4BJKnJRHURfau_FCTV6acPkKxPt0kIMo0bdw']
+2022-07-18 17:07:51,782 - INFO - 44 - extract_data_from_response - 提取的变量名为:token,提取的值为:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU1NzN9.361l7ULlz6IjzbTllvIySLPGwfEEZjMosJ6fQb9a5nOhzhtQPi4BJKnJRHURfau_FCTV6acPkKxPt0kIMo0bdw，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,783 - INFO - 37 - extract_data_from_response - 提取的变量名为:member_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:07:51,785 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[27]
+2022-07-18 17:07:51,785 - INFO - 44 - extract_data_from_response - 提取的变量名为:member_id,提取的值为:27，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,788 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['member_id', 'random_str', 'random_str']
+2022-07-18 17:07:51,926 - INFO - 47 - replace_case_with_re - 有#random_str#标识符，需要生成新的随机数20220718_SyAHipRUrUlVwdNbGjmo
+2022-07-18 17:07:51,926 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:07:51,926 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '002', '用例名称': '添加项目成功', '所属模块': '添加项目', 'method': 'post', 'url': 'loan/add', 'req_data': '{"member_id":"27","title":"借钱买房房20220718_SyAHipRUrUlVwdNbGjmo","amount":500000,"loan_rate":"10","loan_term":"6","loan_date_type":"1","bidding_days":"5"}', 'extract': '{"loan_id":"$..id"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..status","expected":1,"type":"eq"},{"expr":"$..amount","expected":500000.0,"type":"eq"}]', 'assert_db': '[{"sql":"select *from loan where title=\'借钱买房房20220718_SyAHipRUrUlVwdNbGjmo\'","expected":1,"db_type":"count"}]'}
+2022-07-18 17:07:51,927 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/loan/add
+2022-07-18 17:07:51,927 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:07:51,927 - INFO - 36 - send_requests - 请求数据：
+{'member_id': '27', 'title': '借钱买房房20220718_SyAHipRUrUlVwdNbGjmo', 'amount': 500000, 'loan_rate': '10', 'loan_term': '6', 'loan_date_type': '1', 'bidding_days': '5'}
+2022-07-18 17:07:51,953 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 22470, 'member_id': 27, 'title': '借钱买房房20220718_SyAHipRUrUlVwdNbGjmo', 'amount': 500000.0, 'loan_rate': 10.0, 'loan_term': 6, 'loan_date_type': 1, 'bidding_days': 5, 'create_time': '2022-07-18 17:07:53.0', 'bidding_start_time': None, 'full_time': None, 'status': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:07:51,953 - INFO - 37 - extract_data_from_response - 提取的变量名为:loan_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:07:51,953 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[22470]
+2022-07-18 17:07:51,954 - INFO - 44 - extract_data_from_response - 提取的变量名为:loan_id,提取的值为:22470，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,954 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:07:51,954 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:07:51,954 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:07:51,954 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:07:51,954 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,955 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,955 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:07:51,955 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:07:51,955 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:07:51,955 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:07:51,955 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,955 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,955 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..status', 'expected': 1, 'type': 'eq'}
+2022-07-18 17:07:51,956 - INFO - 35 - assert_response_value - 此时actual的值为：
+[1]
+2022-07-18 17:07:51,956 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+1
+2022-07-18 17:07:51,956 - INFO - 41 - assert_response_value - 期望结果为：
+1
+2022-07-18 17:07:51,956 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,956 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,956 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..amount', 'expected': 500000.0, 'type': 'eq'}
+2022-07-18 17:07:51,957 - INFO - 35 - assert_response_value - 此时actual的值为：
+[500000.0]
+2022-07-18 17:07:51,957 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+500000.0
+2022-07-18 17:07:51,957 - INFO - 41 - assert_response_value - 期望结果为：
+500000.0
+2022-07-18 17:07:51,957 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:07:51,957 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:07:51,957 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:07:51,958 - INFO - 37 - extract_data_from_response - 提取的变量名为:loan_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:07:51,958 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[22470]
+2022-07-18 17:07:51,958 - INFO - 44 - extract_data_from_response - 提取的变量名为:loan_id,提取的值为:22470，并设置为Data类实例化对象的属性和值
+2022-07-18 17:07:51,987 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select *from loan where title='借钱买房房20220718_SyAHipRUrUlVwdNbGjmo'
+2022-07-18 17:07:51,988 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+count
+2022-07-18 17:07:51,988 - INFO - 91 - assert_db - 期望结果为：1
+2022-07-18 17:07:51,989 - INFO - 93 - assert_db - 比对数据库查询的结果条数,是否符合预期
+2022-07-18 17:07:52,011 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:07:52,012 - INFO - 118 - assert_db - 断言成功！
+2022-07-18 17:08:36,235 - INFO - 35 - test_register - ============= 注册接口 ===============
+2022-07-18 17:08:36,235 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['phone', 'phone', 'phone']
+2022-07-18 17:08:36,444 - INFO - 39 - replace_case_with_re - 有#phone#标识符，需要生成新的手机号码13695430466
+2022-07-18 17:08:36,444 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '001', '用例名称': '普通用户注册成功', '所属模块': '注册', 'method': 'post', 'url': 'member/register', 'headers': '{"X-Lemonban-Media-Type":"lemonban.v2"}', 'req_data': '{"mobile_phone":"13695430466","pwd":"123456789","reg_name": "py小陈"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..mobile_phone","expected":"13695430466","type":"eq"}]', 'assert_db': '[{"sql":"select * from member where mobile_phone=13695430466","expected":1,"db_type":"count"}]', '备注': None, '用例编写人': None, '用例负责人': None}
+2022-07-18 17:08:36,445 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/register
+2022-07-18 17:08:36,445 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:08:36,445 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '13695430466', 'pwd': '123456789', 'reg_name': 'py小陈'}
+2022-07-18 17:08:36,479 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 15588, 'reg_name': 'py小陈', 'mobile_phone': '13695430466'}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,480 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:08:36,482 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:08:36,482 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:08:36,482 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:08:36,482 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,482 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,483 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:08:36,483 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:08:36,483 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:08:36,483 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:08:36,483 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,483 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,483 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..mobile_phone', 'expected': '13695430466', 'type': 'eq'}
+2022-07-18 17:08:36,484 - INFO - 35 - assert_response_value - 此时actual的值为：
+['13695430466']
+2022-07-18 17:08:36,485 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+13695430466
+2022-07-18 17:08:36,485 - INFO - 41 - assert_response_value - 期望结果为：
+13695430466
+2022-07-18 17:08:36,485 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,485 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,485 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:08:36,511 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select * from member where mobile_phone=13695430466
+2022-07-18 17:08:36,511 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+count
+2022-07-18 17:08:36,511 - INFO - 91 - assert_db - 期望结果为：1
+2022-07-18 17:08:36,511 - INFO - 93 - assert_db - 比对数据库查询的结果条数,是否符合预期
+2022-07-18 17:08:36,523 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:08:36,523 - INFO - 118 - assert_db - 断言成功！
+2022-07-18 17:08:36,525 - INFO - 39 - test_login - ============= 登录接口 ===============
+2022-07-18 17:08:36,526 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/login
+2022-07-18 17:08:36,526 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:08:36,526 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '15500000000', 'pwd': '12345678'}
+2022-07-18 17:08:36,553 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3072002.62, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:13:38', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,554 - INFO - 45 - test_login - 接口响应结果为：{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3072002.62, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:13:38', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,554 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:08:36,554 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:08:36,554 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:08:36,554 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:08:36,554 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,554 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,554 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:08:36,554 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:08:36,554 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:08:36,554 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:08:36,555 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,555 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,555 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..mobile_phone', 'expected': '15500000000', 'type': 'eq'}
+2022-07-18 17:08:36,555 - INFO - 35 - assert_response_value - 此时actual的值为：
+['15500000000']
+2022-07-18 17:08:36,555 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+15500000000
+2022-07-18 17:08:36,555 - INFO - 41 - assert_response_value - 期望结果为：
+15500000000
+2022-07-18 17:08:36,555 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,556 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,556 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$...token', 'expected': 1, 'type': 'count'}
+2022-07-18 17:08:36,556 - INFO - 35 - assert_response_value - 此时actual的值为：
+['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw']
+2022-07-18 17:08:36,556 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw
+2022-07-18 17:08:36,556 - INFO - 41 - assert_response_value - 期望结果为：
+1
+2022-07-18 17:08:36,556 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:08:36,559 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['user', 'passwd']
+2022-07-18 17:08:36,559 - INFO - 54 - replace_case_with_re - 将标识符user 替换为15500000000
+2022-07-18 17:08:36,559 - INFO - 54 - replace_case_with_re - 将标识符passwd 替换为12345678
+2022-07-18 17:08:36,559 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '001', '用例名称': '用户登录成功', '所属模块': '登录', 'method': 'post', 'url': 'member/login', 'req_data': '{"mobile_phone":"15500000000","pwd":"12345678"}', 'extract': '{"token":"$..token","member_id":"$..id","leave_amount":"$..leave_amount"}', 'assert_list': None, 'assert_db': None}
+2022-07-18 17:08:36,559 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/login
+2022-07-18 17:08:36,560 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:08:36,560 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '15500000000', 'pwd': '12345678'}
+2022-07-18 17:08:36,577 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3072002.62, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:13:38', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,578 - INFO - 67 - test_recharge - {'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3072002.62, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:13:38', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,578 - INFO - 37 - extract_data_from_response - 提取的变量名为:token,提取的jsonpath表达式为:$..token
+2022-07-18 17:08:36,578 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw']
+2022-07-18 17:08:36,578 - INFO - 44 - extract_data_from_response - 提取的变量名为:token,提取的值为:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,578 - INFO - 37 - extract_data_from_response - 提取的变量名为:member_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:08:36,578 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[27]
+2022-07-18 17:08:36,578 - INFO - 44 - extract_data_from_response - 提取的变量名为:member_id,提取的值为:27，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,578 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:08:36,579 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3072002.62]
+2022-07-18 17:08:36,579 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3072002.62，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,579 - INFO - 37 - extract_data_from_response - 提取的变量名为:token,提取的jsonpath表达式为:$..token
+2022-07-18 17:08:36,579 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw']
+2022-07-18 17:08:36,579 - INFO - 44 - extract_data_from_response - 提取的变量名为:token,提取的值为:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,579 - INFO - 37 - extract_data_from_response - 提取的变量名为:member_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:08:36,580 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[27]
+2022-07-18 17:08:36,581 - INFO - 44 - extract_data_from_response - 提取的变量名为:member_id,提取的值为:27，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,581 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:08:36,581 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3072002.62]
+2022-07-18 17:08:36,581 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3072002.62，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,584 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['member_id', 'leave_amount', 'member_id', 'leave_amount']
+2022-07-18 17:08:36,584 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:08:36,584 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3072002.62
+2022-07-18 17:08:36,584 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:08:36,584 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3072002.62
+2022-07-18 17:08:36,584 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '002', '用例名称': '普通用户充值200元成功', '所属模块': '充值', 'method': 'post', 'url': 'member/recharge', 'req_data': '{"member_id":"27","amount":"200"}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..leave_amount","expected":3072002.62+200,"type":"eq"}]', 'assert_db': '[{"sql":"select leave_amount from member where id=27","expected":{"leave_amount":3072002.62+200},"db_type":"eq"}]'}
+2022-07-18 17:08:36,585 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/recharge
+2022-07-18 17:08:36,585 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:08:36,585 - INFO - 36 - send_requests - 请求数据：
+{'member_id': '27', 'amount': '200'}
+2022-07-18 17:08:36,615 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3072202.62, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,616 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:08:36,616 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3072202.62]
+2022-07-18 17:08:36,616 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3072202.62，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,617 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:08:36,617 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:08:36,617 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:08:36,617 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:08:36,617 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,617 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,617 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:08:36,618 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:08:36,618 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:08:36,618 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:08:36,618 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,618 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,618 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..leave_amount', 'expected': 3072202.62, 'type': 'eq'}
+2022-07-18 17:08:36,619 - INFO - 35 - assert_response_value - 此时actual的值为：
+[3072202.62]
+2022-07-18 17:08:36,619 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+3072202.62
+2022-07-18 17:08:36,619 - INFO - 41 - assert_response_value - 期望结果为：
+3072202.62
+2022-07-18 17:08:36,619 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,619 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,619 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:08:36,619 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:08:36,619 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3072202.62]
+2022-07-18 17:08:36,620 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3072202.62，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,649 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select leave_amount from member where id=27
+2022-07-18 17:08:36,649 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+eq
+2022-07-18 17:08:36,649 - INFO - 91 - assert_db - 期望结果为：{'leave_amount': 3072202.62}
+2022-07-18 17:08:36,649 - INFO - 97 - assert_db - 比对数据库查询语句是否相等
+2022-07-18 17:08:36,656 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:08:36,656 - INFO - 118 - assert_db - 断言成功！
+2022-07-18 17:08:36,658 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['member_id', 'leave_amount', 'member_id', 'leave_amount']
+2022-07-18 17:08:36,658 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:08:36,658 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3072202.62
+2022-07-18 17:08:36,659 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:08:36,659 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3072202.62
+2022-07-18 17:08:36,659 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '003', '用例名称': '普通用户充值300.1元成功', '所属模块': '充值', 'method': 'post', 'url': 'member/recharge', 'req_data': '{"member_id":"27","amount":"300.1"}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..leave_amount","expected":3072202.62+300.1,"type":"eq"}]', 'assert_db': '[{"sql":"select leave_amount from member where id=27","expected":{"leave_amount":3072202.62+300.1},"db_type":"eq"}]'}
+2022-07-18 17:08:36,659 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/recharge
+2022-07-18 17:08:36,659 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:08:36,659 - INFO - 36 - send_requests - 请求数据：
+{'member_id': '27', 'amount': '300.1'}
+2022-07-18 17:08:36,688 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3072502.72, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,689 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:08:36,689 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3072502.72]
+2022-07-18 17:08:36,689 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3072502.72，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,689 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:08:36,689 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:08:36,689 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:08:36,689 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:08:36,689 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,689 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,690 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:08:36,690 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:08:36,690 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:08:36,690 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:08:36,690 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,690 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,690 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..leave_amount', 'expected': 3072502.72, 'type': 'eq'}
+2022-07-18 17:08:36,690 - INFO - 35 - assert_response_value - 此时actual的值为：
+[3072502.72]
+2022-07-18 17:08:36,690 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+3072502.72
+2022-07-18 17:08:36,690 - INFO - 41 - assert_response_value - 期望结果为：
+3072502.72
+2022-07-18 17:08:36,690 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,690 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,690 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:08:36,691 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:08:36,691 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3072502.72]
+2022-07-18 17:08:36,691 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3072502.72，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,727 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select leave_amount from member where id=27
+2022-07-18 17:08:36,728 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+eq
+2022-07-18 17:08:36,728 - INFO - 91 - assert_db - 期望结果为：{'leave_amount': 3072502.72}
+2022-07-18 17:08:36,728 - INFO - 97 - assert_db - 比对数据库查询语句是否相等
+2022-07-18 17:08:36,734 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:08:36,734 - INFO - 118 - assert_db - 断言成功！
+2022-07-18 17:08:36,742 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['member_id', 'leave_amount', 'member_id', 'leave_amount']
+2022-07-18 17:08:36,743 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:08:36,743 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3072502.72
+2022-07-18 17:08:36,743 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:08:36,743 - INFO - 54 - replace_case_with_re - 将标识符leave_amount 替换为3072502.72
+2022-07-18 17:08:36,743 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '004', '用例名称': '普通用户充值500.01元成功', '所属模块': '充值', 'method': 'post', 'url': 'member/recharge', 'req_data': '{"member_id":"27","amount":"500.01"}', 'extract': '{"leave_amount":"$..leave_amount"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..leave_amount","expected":3072502.72+500.01,"type":"eq"}]', 'assert_db': '[{"sql":"select leave_amount from member where id=27","expected":{"leave_amount":3072502.72+500.01},"db_type":"eq"}]'}
+2022-07-18 17:08:36,744 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/recharge
+2022-07-18 17:08:36,744 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:08:36,744 - INFO - 36 - send_requests - 请求数据：
+{'member_id': '27', 'amount': '500.01'}
+2022-07-18 17:08:36,785 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3073002.73, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,786 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:08:36,786 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3073002.73]
+2022-07-18 17:08:36,786 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3073002.73，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,786 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:08:36,787 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:08:36,787 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:08:36,787 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:08:36,787 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,787 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,787 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:08:36,787 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:08:36,787 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:08:36,788 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:08:36,788 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,788 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,788 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..leave_amount', 'expected': 3073002.73, 'type': 'eq'}
+2022-07-18 17:08:36,789 - INFO - 35 - assert_response_value - 此时actual的值为：
+[3073002.73]
+2022-07-18 17:08:36,789 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+3073002.73
+2022-07-18 17:08:36,789 - INFO - 41 - assert_response_value - 期望结果为：
+3073002.73
+2022-07-18 17:08:36,789 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:36,789 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:36,789 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:08:36,790 - INFO - 37 - extract_data_from_response - 提取的变量名为:leave_amount,提取的jsonpath表达式为:$..leave_amount
+2022-07-18 17:08:36,790 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[3073002.73]
+2022-07-18 17:08:36,790 - INFO - 44 - extract_data_from_response - 提取的变量名为:leave_amount,提取的值为:3073002.73，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,822 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select leave_amount from member where id=27
+2022-07-18 17:08:36,822 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+eq
+2022-07-18 17:08:36,822 - INFO - 91 - assert_db - 期望结果为：{'leave_amount': 3073002.73}
+2022-07-18 17:08:36,822 - INFO - 97 - assert_db - 比对数据库查询语句是否相等
+2022-07-18 17:08:36,828 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:08:36,828 - INFO - 118 - assert_db - 断言成功！
+2022-07-18 17:08:36,833 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['user', 'passwd']
+2022-07-18 17:08:36,834 - INFO - 54 - replace_case_with_re - 将标识符user 替换为15500000000
+2022-07-18 17:08:36,834 - INFO - 54 - replace_case_with_re - 将标识符passwd 替换为12345678
+2022-07-18 17:08:36,834 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '001', '用例名称': '用户登录成功', '所属模块': '登录', 'method': 'post', 'url': 'member/login', 'req_data': '{"mobile_phone":"15500000000","pwd":"12345678"}', 'extract': '{"token":"$..token","member_id":"$..id"}', 'assert_list': None, 'assert_db': None}
+2022-07-18 17:08:36,834 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/login
+2022-07-18 17:08:36,834 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:08:36,834 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '15500000000', 'pwd': '12345678'}
+2022-07-18 17:08:36,858 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 27, 'leave_amount': 3073002.73, 'mobile_phone': '15500000000', 'reg_name': '小柠檬', 'reg_time': '2022-07-14 14:45:48.0', 'type': 1, 'token_info': {'token_type': 'Bearer', 'expires_in': '2022-07-18 17:13:38', 'token': 'eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw'}}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:36,858 - INFO - 37 - extract_data_from_response - 提取的变量名为:token,提取的jsonpath表达式为:$..token
+2022-07-18 17:08:36,859 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw']
+2022-07-18 17:08:36,859 - INFO - 44 - extract_data_from_response - 提取的变量名为:token,提取的值为:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,859 - INFO - 37 - extract_data_from_response - 提取的变量名为:member_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:08:36,859 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[27]
+2022-07-18 17:08:36,859 - INFO - 44 - extract_data_from_response - 提取的变量名为:member_id,提取的值为:27，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,860 - INFO - 37 - extract_data_from_response - 提取的变量名为:token,提取的jsonpath表达式为:$..token
+2022-07-18 17:08:36,860 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:['eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw']
+2022-07-18 17:08:36,860 - INFO - 44 - extract_data_from_response - 提取的变量名为:token,提取的值为:eyJhbGciOiJIUzUxMiJ9.eyJtZW1iZXJfaWQiOjI3LCJleHAiOjE2NTgxMzU2MTh9.EaLb1RnOi2nUh5lysllKrMcJsAb6GwYZ8UGZJP0YURDmBrHYG2qVELqa0j-FpvCBlrHcZpIZ-_BptYpKtR-Mrw，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,860 - INFO - 37 - extract_data_from_response - 提取的变量名为:member_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:08:36,860 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[27]
+2022-07-18 17:08:36,860 - INFO - 44 - extract_data_from_response - 提取的变量名为:member_id,提取的值为:27，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:36,862 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['member_id', 'random_str', 'random_str']
+2022-07-18 17:08:37,051 - INFO - 47 - replace_case_with_re - 有#random_str#标识符，需要生成新的随机数20220718_MQfqLoHakbLftwSmhGXk
+2022-07-18 17:08:37,052 - INFO - 54 - replace_case_with_re - 将标识符member_id 替换为27
+2022-07-18 17:08:37,052 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '002', '用例名称': '添加项目成功', '所属模块': '添加项目', 'method': 'post', 'url': 'loan/add', 'req_data': '{"member_id":"27","title":"借钱买房房20220718_MQfqLoHakbLftwSmhGXk","amount":500000,"loan_rate":"10","loan_term":"6","loan_date_type":"1","bidding_days":"5"}', 'extract': '{"loan_id":"$..id"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..status","expected":1,"type":"eq"},{"expr":"$..amount","expected":500000.0,"type":"eq"}]', 'assert_db': '[{"sql":"select *from loan where title=\'借钱买房房20220718_MQfqLoHakbLftwSmhGXk\'","expected":1,"db_type":"count"}]'}
+2022-07-18 17:08:37,052 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/loan/add
+2022-07-18 17:08:37,052 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-18 17:08:37,052 - INFO - 36 - send_requests - 请求数据：
+{'member_id': '27', 'title': '借钱买房房20220718_MQfqLoHakbLftwSmhGXk', 'amount': 500000, 'loan_rate': '10', 'loan_term': '6', 'loan_date_type': '1', 'bidding_days': '5'}
+2022-07-18 17:08:37,076 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 22471, 'member_id': 27, 'title': '借钱买房房20220718_MQfqLoHakbLftwSmhGXk', 'amount': 500000.0, 'loan_rate': 10.0, 'loan_term': 6, 'loan_date_type': 1, 'bidding_days': 5, 'create_time': '2022-07-18 17:08:38.0', 'bidding_start_time': None, 'full_time': None, 'status': 1}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-18 17:08:37,076 - INFO - 37 - extract_data_from_response - 提取的变量名为:loan_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:08:37,076 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[22471]
+2022-07-18 17:08:37,076 - INFO - 44 - extract_data_from_response - 提取的变量名为:loan_id,提取的值为:22471，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:37,077 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-18 17:08:37,077 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-18 17:08:37,077 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-18 17:08:37,077 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-18 17:08:37,077 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:37,077 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:37,077 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-18 17:08:37,077 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-18 17:08:37,077 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-18 17:08:37,077 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-18 17:08:37,077 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:37,078 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:37,078 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..status', 'expected': 1, 'type': 'eq'}
+2022-07-18 17:08:37,078 - INFO - 35 - assert_response_value - 此时actual的值为：
+[1]
+2022-07-18 17:08:37,078 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+1
+2022-07-18 17:08:37,078 - INFO - 41 - assert_response_value - 期望结果为：
+1
+2022-07-18 17:08:37,078 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:37,078 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:37,078 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..amount', 'expected': 500000.0, 'type': 'eq'}
+2022-07-18 17:08:37,078 - INFO - 35 - assert_response_value - 此时actual的值为：
+[500000.0]
+2022-07-18 17:08:37,078 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+500000.0
+2022-07-18 17:08:37,078 - INFO - 41 - assert_response_value - 期望结果为：
+500000.0
+2022-07-18 17:08:37,078 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-18 17:08:37,078 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-18 17:08:37,079 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-18 17:08:37,079 - INFO - 37 - extract_data_from_response - 提取的变量名为:loan_id,提取的jsonpath表达式为:$..id
+2022-07-18 17:08:37,079 - INFO - 39 - extract_data_from_response - jsonpath提取之后的值为:[22471]
+2022-07-18 17:08:37,079 - INFO - 44 - extract_data_from_response - 提取的变量名为:loan_id,提取的值为:22471，并设置为Data类实例化对象的属性和值
+2022-07-18 17:08:37,103 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select *from loan where title='借钱买房房20220718_MQfqLoHakbLftwSmhGXk'
+2022-07-18 17:08:37,104 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+count
+2022-07-18 17:08:37,104 - INFO - 91 - assert_db - 期望结果为：1
+2022-07-18 17:08:37,104 - INFO - 93 - assert_db - 比对数据库查询的结果条数,是否符合预期
+2022-07-18 17:08:37,120 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-18 17:08:37,120 - INFO - 118 - assert_db - 断言成功！
