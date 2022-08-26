@@ -2978,3 +2978,58 @@ count
 2022-07-18 16:37:36,606 - INFO - 93 - assert_db - 比对数据库查询的结果条数,是否符合预期
 2022-07-18 16:37:36,621 - INFO - 110 - assert_db - 比对结果为：True
 2022-07-18 16:37:36,622 - INFO - 118 - assert_db - 断言成功！
+2022-07-19 20:26:04,261 - INFO - 35 - test_register - ============= 注册接口 ===============
+2022-07-19 20:26:04,262 - INFO - 34 - replace_case_with_re - 要替换的标识符有：['phone', 'phone', 'phone']
+2022-07-19 20:26:04,636 - INFO - 39 - replace_case_with_re - 有#phone#标识符，需要生成新的手机号码18082873560
+2022-07-19 20:26:04,636 - INFO - 59 - replace_case_with_re - 替换之后的用例数据为： 
+{'id': '001', '用例名称': '普通用户注册成功', '所属模块': '注册', 'method': 'post', 'url': 'member/register', 'headers': '{"X-Lemonban-Media-Type":"lemonban.v2"}', 'req_data': '{"mobile_phone":"18082873560","pwd":"123456789","reg_name": "py小陈"}', 'assert_list': '[{"expr":"$.code","expected":0,"type":"eq"},{"expr":"$.msg","expected":"OK","type":"eq"},{"expr":"$..mobile_phone","expected":"18082873560","type":"eq"}]', 'assert_db': '[{"sql":"select * from member where mobile_phone=18082873560","expected":1,"db_type":"count"}]', '备注': None, '用例编写人': None, '用例负责人': None}
+2022-07-19 20:26:04,636 - INFO - 34 - send_requests - 请求url：
+http://api.lemonban.com/futureloan/member/register
+2022-07-19 20:26:04,637 - INFO - 35 - send_requests - 请求方法：
+post
+2022-07-19 20:26:04,637 - INFO - 36 - send_requests - 请求数据：
+{'mobile_phone': '18082873560', 'pwd': '123456789', 'reg_name': 'py小陈'}
+2022-07-19 20:26:04,690 - INFO - 52 - send_requests - 响应结果为：<Response [200]> 
+ 响应数据为{'code': 0, 'msg': 'OK', 'data': {'id': 16368, 'reg_name': 'py小陈', 'mobile_phone': '18082873560'}, 'copyright': 'Copyright 柠檬班 © 2017-2019 湖南省零檬信息技术有限公司 All Rights Reserved'}
+2022-07-19 20:26:04,691 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.code', 'expected': 0, 'type': 'eq'}
+2022-07-19 20:26:04,694 - INFO - 35 - assert_response_value - 此时actual的值为：
+[0]
+2022-07-19 20:26:04,694 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+0
+2022-07-19 20:26:04,694 - INFO - 41 - assert_response_value - 期望结果为：
+0
+2022-07-19 20:26:04,695 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-19 20:26:04,695 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-19 20:26:04,695 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$.msg', 'expected': 'OK', 'type': 'eq'}
+2022-07-19 20:26:04,695 - INFO - 35 - assert_response_value - 此时actual的值为：
+['OK']
+2022-07-19 20:26:04,696 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+OK
+2022-07-19 20:26:04,696 - INFO - 41 - assert_response_value - 期望结果为：
+OK
+2022-07-19 20:26:04,697 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-19 20:26:04,698 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-19 20:26:04,698 - INFO - 32 - assert_response_value - 要断言的内容为：
+{'expr': '$..mobile_phone', 'expected': '18082873560', 'type': 'eq'}
+2022-07-19 20:26:04,700 - INFO - 35 - assert_response_value - 此时actual的值为：
+['18082873560']
+2022-07-19 20:26:04,700 - INFO - 40 - assert_response_value - 经过判断，从响应结果当中提取到的值为：
+18082873560
+2022-07-19 20:26:04,700 - INFO - 41 - assert_response_value - 期望结果为：
+18082873560
+2022-07-19 20:26:04,701 - INFO - 45 - assert_response_value - 比对2个值是否相等
+2022-07-19 20:26:04,701 - INFO - 46 - assert_response_value - 比对结果为：
+True
+2022-07-19 20:26:04,701 - INFO - 63 - assert_response_value - 断言成功！
+2022-07-19 20:26:04,732 - INFO - 89 - assert_db - 当前要比对的sql语句：
+select * from member where mobile_phone=18082873560
+2022-07-19 20:26:04,732 - INFO - 90 - assert_db - 当前执行sql的查询类型(查询结果条数/查询某个值.)
+count
+2022-07-19 20:26:04,733 - INFO - 91 - assert_db - 期望结果为：1
+2022-07-19 20:26:04,733 - INFO - 93 - assert_db - 比对数据库查询的结果条数,是否符合预期
+2022-07-19 20:26:04,748 - INFO - 110 - assert_db - 比对结果为：True
+2022-07-19 20:26:04,749 - INFO - 118 - assert_db - 断言成功！
