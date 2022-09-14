@@ -9,14 +9,14 @@ from openpyxl import load_workbook
 class MyExcel:
     def __init__(self,excel_path,sheet_name):
         # 通过load_workbook函数，由输入的路径打开一个workbook
-        wb =load_workbook(excel_path)
+        wb = load_workbook(excel_path)
         # 打开一个表单 - 通过sheet页名
         self.sh = wb[sheet_name]
         pass
 
     def read_data(self):
         # 注：接口的请求数据，读取出来是字符串
-        # 存储表单下读取到的所有数据 - 每个成员患都是一个字典
+        # 存储表单下读取到的所有数据 - 每个成员都是一个字典
         all_data=[]
         data = list(self.sh.values)
         keys =data[0]
