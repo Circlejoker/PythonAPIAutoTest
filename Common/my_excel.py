@@ -17,10 +17,10 @@ class MyExcel:
     def read_data(self):
         # 注：接口的请求数据，读取出来是字符串
         # 存储表单下读取到的所有数据 - 每个成员都是一个字典
-        all_data=[]
+        all_data = []
         data = list(self.sh.values)
-        keys =data[0]
+        keys = data[0]
         for row in data[1:]:
-            row_dict = dict(zip(keys,row))
+            row_dict = dict(zip(keys, row))
             all_data.append(row_dict)
         return all_data
